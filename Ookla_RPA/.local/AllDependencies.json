@@ -1723,15 +1723,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DeLeon\\.nuget\\packages\\": {}
+    "C:\\Users\\Aleo Ralph De Leon\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Ookla_RPA",
       "projectName": "Ookla_RPA",
-      "projectPath": "C:\\Users\\DeLeon\\Desktop\\Ookla_RPA\\Ookla_RPA\\Ookla_RPA\\.local",
-      "packagesPath": "C:\\Users\\DeLeon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DeLeon\\Desktop\\Ookla_RPA\\Ookla_RPA\\Ookla_RPA\\.local"
+      "projectPath": "C:\\Users\\Aleo Ralph De Leon\\Desktop\\Github\\project1\\Ookla_RPA\\.local",
+      "packagesPath": "C:\\Users\\Aleo Ralph De Leon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aleo Ralph De Leon\\Desktop\\Github\\project1\\Ookla_RPA\\.local"
     },
     "frameworks": {
       "net461": {
