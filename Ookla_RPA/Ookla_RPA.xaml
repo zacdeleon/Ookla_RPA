@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Flowchart" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,5739" sap2010:WorkflowViewState.IdRef="Flowchart_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Flowchart" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1206,5900" sap2010:WorkflowViewState.IdRef="Flowchart_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -56,19 +56,19 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="1211,5574" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="1211,5735" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1169,5482" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="https://extracts.ookla.com/files/v2">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1169,5544" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="https://extracts.ookla.com/files/v2">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1135,5381" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1135,5443" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Name="arrStr" />
               <Variable x:TypeArguments="x:Int32" Name="count" />
@@ -80,12 +80,25 @@
               <Variable x:TypeArguments="sd:DataTable" Name="excel_table" />
               <Variable x:TypeArguments="x:String" Name="dates" />
               <Variable x:TypeArguments="x:Boolean" Name="exist" />
+              <Variable x:TypeArguments="x:String" Name="loc2" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="FTP" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1093,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pass2]" Username="[user2]" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Ookla_web" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1093,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pass1]" Username="[user1]" />
+            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Download_loc" DisplayName="Location" sap:VirtualizedContainerService.HintSize="1093,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+              <ui:GetRobotAsset.Value>
+                <OutArgument x:TypeArguments="x:String">[loc]</OutArgument>
+              </ui:GetRobotAsset.Value>
+            </ui:GetRobotAsset>
+            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Excel_loc" DisplayName="Location" sap:VirtualizedContainerService.HintSize="1093,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+              <ui:GetRobotAsset.Value>
+                <OutArgument x:TypeArguments="x:String">[loc2]</OutArgument>
+              </ui:GetRobotAsset.Value>
+            </ui:GetRobotAsset>
             <ui:UiElementExists DisplayName="Element Exists 'pane'" Exists="[exist]" sap:VirtualizedContainerService.HintSize="1093,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be54bae8-044e-4056-afb9-1159fcfeb1f5" InformativeScreenshot="431483ab3bd46c4249e0d9bc826c92b9" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='https://extracts.ookla.com/files/v2 - Google Chrome' /&gt;&lt;ctrl idx='6' role='pane' /&gt;" TimeoutMS="5000">
@@ -95,21 +108,14 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[exist = True]" sap:VirtualizedContainerService.HintSize="1093,851" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[exist = True]" sap:VirtualizedContainerService.HintSize="1093,665" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,704" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,518" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="FTP" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pass2]" Username="[user2]" />
-                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Ookla_web" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pass1]" Username="[user1]" />
-                  <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Download_loc" DisplayName="Location" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
-                    <ui:GetRobotAsset.Value>
-                      <OutArgument x:TypeArguments="x:String">[loc]</OutArgument>
-                    </ui:GetRobotAsset.Value>
-                  </ui:GetRobotAsset>
                   <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ContinueOnError="True" DisplayName="Type Into 'editable text  Username'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="False" Text="[user1]">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d566ec89-15b7-4d29-bc6e-c20e902baafe" InformativeScreenshot="45b222ec3674035603d0f7977ebeff11" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='https://extracts.ookla.com/files/v2 - Google Chrome' /&gt;&lt;ctrl name='Username' role='editable text' /&gt;">
@@ -280,7 +286,7 @@
                                   <InArgument x:TypeArguments="x:Object">[ExtractDataTable.Rows(0).Item("name")]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="897,453" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="C:\Users\DeLeon\Desktop\Log.xlsx">
+                              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="897,453" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[loc2]">
                                 <ui:ExcelApplicationScope.Body>
                                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                     <ActivityAction.Argument>
@@ -408,7 +414,7 @@
                                         </ActivityAction>
                                       </p:WithFtpSession.Body>
                                     </p:WithFtpSession>
-                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,614" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="C:\Users\DeLeon\Desktop\Log.xlsx">
+                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,614" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="[loc2]">
                                       <ui:ExcelApplicationScope.Body>
                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                           <ActivityAction.Argument>
@@ -468,5 +474,6 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1169,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Done&quot;]" />
   </Sequence>
 </Activity>
