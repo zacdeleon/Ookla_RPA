@@ -20,4 +20,29 @@ PLAN varchar(50)
 
 
 
+zx011676
+
+10.8.73.86
+10.8.73.70
+
+D@$h_smd123
+dash
+10.8.73.128 - database
+smddb
+
+
+mysql create
+
+./MYSQL/bin/mysqlmariadb KJOHN
+
+08:00 17:00
+
+ACR - WFH
+
+
+To do 
+Create Script (Tables, Computation)
+*Extraction script
+
+
 
