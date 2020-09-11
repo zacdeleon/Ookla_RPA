@@ -1,0 +1,23 @@
+load data
+local infile '/apps/DASHBOARD/DAMP/loader/PCRF_SUBSCRIBER_INVENTORY.load'
+into table PCRF_SUBSCRIBER_INVENTORY
+fields terminated by ','
+optionally enclosed by '"'
+LINES TERMINATED BY '\n'
+(
+timestamp,
+SubscriberId,
+PLAN
+)
+set timestamp=now();
+
+
+create table PCRF_SUBSCRIBER_INVENTORY(
+`timestamp` datetime,
+SubscriberId varchar(50),
+PLAN varchar(50)
+);
+
+
+
+

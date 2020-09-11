@@ -1,0 +1,36 @@
+app/dashboard/bin - ingest script
+mycom/input - raw file
+
+inp_dir = directory of raw data
+inp_done = directory of output
+controlfile = sql file 
+
+
+loader = 
+mysql = directory base
+2b = 10.8.73.79
+elixir2b
+cat = copy
+cd damp
+ls - ltrh
+
+PCRF_SUBSCRIBER_INVENTORY
+
+VI
+vi (text.sh)
+i = insert
+right click = paste
+esc = clear comman
+:wq = save
+1+shit+g = gotofirst line
+d+shift+g = delete all line
+:q! = exit without saving
+shift+x = delete left side of cursor
+shift+a = punta sa dulo
+
+
+grep =  remove 
+sed = skip na datas
+>> append 
+> replace
+< 

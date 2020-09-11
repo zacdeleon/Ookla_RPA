@@ -1,0 +1,29 @@
+load data
+local infile '/apps/DASHBOARD/bin/julie_test/loader/CM_Loader.load'
+into table CM_PERFORMANCE_INITIAL
+fields terminated by ','
+optionally enclosed by '"'
+LINES TERMINATED BY '\n'
+(
+DOMAIN,
+STATUS,
+ACTIVITY_NAME,
+SEVERITY_TYPE,
+SERVICE_IMPACT,
+REGION,
+INVOLVED_FACILITY,
+CRF_NO,
+SEI_REVIEWER,
+IMPLEMENTERS,
+@var1,
+START_TIME,
+PROPONENT,
+CM_REVIEWER,
+MONTH,
+PROJECT_TAG,
+REVIEW_COUNT,
+DEFERMENT_REASON,
+CRF_REVISION_NO,
+CRF_TYPE
+)
+set CM_DATE=STR_TO_DATE(@var1,'%m/%d/%Y');
